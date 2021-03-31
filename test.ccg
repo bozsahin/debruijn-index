@@ -1,0 +1,8 @@
+% some test lambda terms for de bruijning.
+% please ignore the stuff before colon
+% --cem bozsahin
+
+a x := x : \z.(\y.y(\x.x))(\x. z x) ;
+b x := x : (\x.\y.z x (\u. u x))(\x. w x) ;
+c x := x : \f\g\x.f x(gx);
+d x := x : (x y)(y z) z;
