@@ -1,2 +1,2 @@
-# deBruijn-Gordon-index
-finding deBruijn indices of a lambda term by nameless bound variables only
+# debruijn-index
+finding de Bruijn indices of a lambda term by nameless bound variables only. Free variables remain unchanged.
