@@ -14,7 +14,7 @@ There are three kinds of lambda terms:
 
 - `LAM V B`  : `V` is the binding occurrence of the variable, `B` is the  lambda body. `LAM` is the keyword, fashioned after Alessandro Cimatti's lambda calculus ADT (many thanks!)
 
-There are two kinds of lambda bodies, with only necessary amount of parenthesization.
+There are two kinds of lambda bodies, assumed to be with only necessary amount of parenthesization.
 
 - `E` : unary lambda body: constant, variable or a unary lambda term.
 
