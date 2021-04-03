@@ -18,7 +18,7 @@ There are two kinds of lambda bodies, assumed to be with only necessary amount o
 
 - `E` : unary lambda body: constant, variable or a unary lambda term.
 
-- `(E1 E2)` : binary lambda body. 
+- `E1 E2` : binary lambda body. 
 
 enjoy.
 
