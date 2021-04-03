@@ -12,7 +12,7 @@ NB. `lterm` is not Common Lisp's `lambda terms`. The reason is that not every co
 
 There are three kinds of lambda terms:
 
-- `LAM V B`  : `V` is the variable, `B` is the unary or binary lambda body. `LAM` is the keyword, fashioned after Alessandro Cimatti's lambda calculus interpretation (many tahnks!)
+- `LAM V B`  : `V` is the variable, `B` is the unary or binary lambda body. `LAM` is the keyword, fashioned after Alessandro Cimatti's lambda calculus ADT (many thanks!)
 
 - `E` : unary lambda body, constant, variable or a unary lambda term.
 
