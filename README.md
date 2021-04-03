@@ -6,7 +6,18 @@ Finding de Bruijn indices of a lambda term, by generating nameless bound variabl
 Under the hood, it returns two values, using the `values` primitive of Common Lisp. The first one is the de Bruijn term of the lambda term.
 The second one is the binding list, in the precedence  of name shadowing, which is obtained in getting the term.
 
-You can simply use the first result just like any function return, or use `multiple-value-bind` to have access to both results.
+You can simply use the first result just like any function return value, or use `multiple-value-bind` to have access to both results.
+
+NB. `lterm` is not Common Lisp's `lambda terms`. The reason is that not every compiler allows you to see the inside of a closure.
+
+There are three kinds of lambda terms:
+
+- `LAM V B`  : `V` is the variable, `B` is the unary or binary lambda body. `LAM` is the keyword, fashioned after Alessandro Cimatti's lambda calculus interpretation (many tahnks!)
+
+- `E` : unary lambda body, constant, variable or a unary lambda term.
+
+- `E1 E2` : binary lambda body. 
 
 enjoy.
+
 -cem bozsahin
