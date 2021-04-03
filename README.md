@@ -14,7 +14,7 @@ There are three kinds of lambda terms:
 
 - `LAM V B`  : `V` is the variable, `B` is the unary or binary lambda body. `LAM` is the keyword, fashioned after Alessandro Cimatti's lambda calculus ADT (many thanks!)
 
-- `E` : unary lambda body, constant, variable or a unary lambda term.
+- `E` : unary lambda body: constant, variable or a unary lambda term.
 
 - `E1 E2` : binary lambda body. 
 
