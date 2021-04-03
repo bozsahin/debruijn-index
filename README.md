@@ -8,7 +8,7 @@ The second one is the binding list, in the precedence  of name shadowing, which 
 
 You can simply use the first result just like any function return value, or use `multiple-value-bind` to have access to both results.
 
-NB. `lterm` is not Common Lisp's `lambda terms`. The reason is that not every compiler allows you to see the inside of a closure.
+NB. `lterm` is not Common Lisp's `lambda` term. The reason is that not every compiler allows you to see the inside of a closure.
 
 There are three kinds of lambda terms:
 
