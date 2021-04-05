@@ -16,9 +16,9 @@ There are three kinds of lambda terms:
 
 There are two kinds of lambda bodies, assumed to be with only necessary amount of parenthesization.
 
-- `E` : unary lambda body: constant, variable or a unary lambda term.
+- `E` : unary lambda body: constant, variable or a unary lambda term in parentheses.
 
-- `E1 E2` : binary lambda body. 
+- `(E1 E2)` : binary lambda body. 
 
 enjoy.
 
