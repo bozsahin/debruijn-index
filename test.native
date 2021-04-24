@@ -1,8 +1,0 @@
-;; input in native lambda term format; where LAM stands for lambda
-;; Lambda bindinds are triplets (LAM V B) where V is binding occurence of variable V, and B is body
-;; Lambda bodies are unary values E (variables, constants), or binary application (E1 E2) where Ei are lambda terms
-     (LAM Z ((LAM Y (Y (LAM X X))) (LAM X (Z X))))  
-     ((LAM X (LAM Y ((Z X) (LAM U (U X))))) (LAM X (W X)))
-     (LAM F (LAM G (LAM X ((F X) (G X)))))
-     (LAM X (LAM Y (((LAM X (A (LAM X B))) Y) (LAM Y (Y X)))))
-     (((X Y) (Y Z)) Z)
