@@ -31,8 +31,8 @@
   `(identity ,term))
 
 (defmacro mk-dterm-index (lterm bl curlevel)
-  "Following the standard interpretation of deBruijn index 
-   is lambda distance."
+  "Following the standard interpretation that deBruijn index 
+   is lambda binding's distance."
   `(+ 1 (- ,curlevel (rest (assoc ,lterm ,bl)))))
 
 (defmacro l-get-b21 (lterm)
