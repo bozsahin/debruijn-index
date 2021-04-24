@@ -30,8 +30,10 @@
 (defmacro mk-dterm-const (term)
   `(identity ,term))
 
-(defmacro mk-dterm-index (lterm bl)
-  `(rest (assoc ,lterm ,bl)))
+(defmacro mk-dterm-index (lterm bl curlevel)
+  "Following the standard interpretation of deBruijn index 
+   is lambda distance."
+  `(+ 1 (- ,curlevel (rest (assoc ,lterm ,bl)))))
 
 (defmacro l-get-b21 (lterm)
   `(first ,lterm))
@@ -56,4 +58,4 @@
 	((binarybp lterm) (mk-dterm-bin (debruijn (l-get-b21 lterm)  bl l) ; (E1 E2)
 					(debruijn (l-get-b22 lterm)  bl l))) 
 	((constantbp  lterm bl) (mk-dterm-const lterm))                                        ; E
-	(t (mk-dterm-index lterm bl))))  ; must be bound variable if all above  fails
+	(t (mk-dterm-index lterm bl l))))  ; must be bound variable if all above  fails
