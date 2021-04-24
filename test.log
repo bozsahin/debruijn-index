@@ -1,0 +1,31 @@
+
+> (load "debruijn")
+
+T
+> (load "test")
+
+Lambda term   : (LAM Z ((LAM Y (Y (LAM X X))) (LAM X (Z X))))
+de Bruijn term: (LAM ((LAM (1 (LAM 1))) (LAM (2 1))))
+
+Lambda term   : ((LAM X (LAM Y ((Z X) (LAM U (U X))))) (LAM X (W X)))
+de Bruijn term: ((LAM (LAM ((Z 2) (LAM (1 3))))) (LAM (W 1)))
+
+Lambda term   : (LAM F (LAM G (LAM X ((F X) (G X)))))
+de Bruijn term: (LAM (LAM (LAM ((3 1) (2 1)))))
+
+Lambda term   : (LAM X (LAM Y (((LAM X (A (LAM X B))) Y) (LAM Y (Y X)))))
+de Bruijn term: (LAM (LAM (((LAM (A (LAM B))) 1) (LAM (1 3)))))
+
+Lambda term   : (((X Y) (Y Z)) Z)
+de Bruijn term: (((X Y) (Y Z)) Z)
+
+Lambda term   : (LAM X1 (LAM P1 (LAM X2 (((PERSUADE (P1 X1)) X1) X2))))
+de Bruijn term: (LAM (LAM (LAM (((PERSUADE (2 3)) 3) 1))))
+
+Lambda term   : (LAM X1 (LAM P1 (LAM X2 (((PROMISE (P1 X2)) X1) X2))))
+de Bruijn term: (LAM (LAM (LAM (((PROMISE (2 1)) 3) 1))))
+
+Lambda term   : (LAM X1 (LAM P1 (LAM X2 ((EXPECT (P1 X1)) X2))))
+de Bruijn term: (LAM (LAM (LAM ((EXPECT (2 3)) 1))))
+T
+> (dribble)
