@@ -17,9 +17,7 @@
   `(second ,lterm))
 
 (defmacro mk-bl (v bl lev)
-  `(if (null ,bl) 
-     (cons (list ,v (+ ,lev 1))  ,bl) 
-     (list (list ,v (+ ,lev 1))  ,bl)))
+  `(acons ,v (+ ,lev 1) ,bl))
 
 (defmacro mk-dterm-bind (dterm)
   `(if (null ,dterm)
@@ -33,7 +31,7 @@
   `(identity ,term))
 
 (defmacro mk-dterm-index (lterm bl)
-  `(second (assoc ,lterm ,bl)))
+  `(rest (assoc ,lterm ,bl)))
 
 (defmacro l-get-b21 (lterm)
   `(first ,lterm))
@@ -55,7 +53,7 @@
 			 (debruijn (l-get-bb lterm)
 				   (mk-bl (l-get-vv lterm) bl l)
 				   (+ l 1))))
-	((binarybp lterm) (mk-dterm-bin (debruijn (l-get-b21 lterm)  bl 0) ; (E1 E2)
-					(debruijn (l-get-b22 lterm)  bl 0))) 
+	((binarybp lterm) (mk-dterm-bin (debruijn (l-get-b21 lterm)  bl l) ; (E1 E2)
+					(debruijn (l-get-b22 lterm)  bl l))) 
 	((constantbp  lterm bl) (mk-dterm-const lterm))                                        ; E
 	(t (mk-dterm-index lterm bl))))  ; must be bound variable if all above  fails
